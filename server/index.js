@@ -123,7 +123,7 @@ async function run() {
     app.post("/task", async (req, res, next) => {
       try {
         const { title, description, category, email } = req.body;
-        if (!title || !description || !category) {
+        if (!title || !category || !email) {
           throw error("Invalid input data", 400);
         }
 

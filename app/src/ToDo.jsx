@@ -113,14 +113,14 @@ const TodoApp = ({ email }) => {
         setModelData={setAddModelData}
       />
       <DragDropContext onDragEnd={onDragEnd}>
-        <div className="flex gap-4 mt-4  max-w-11/12 mx-auto">
+        <div className="flex gap-4 mt-4  max-w-11/12 mx-auto flex-col md:flex-row">
           {Object.keys(tasks).map((columnKey) => (
             <Droppable key={columnKey} droppableId={columnKey}>
               {(provided) => (
                 <div
                   ref={provided.innerRef}
                   {...provided.droppableProps}
-                  className="w-1/3 p-4 bg-gray-100 rounded-lg"
+                  className="w-full md:w-1/3 p-4 bg-gray-100 rounded-lg"
                 >
                   <h2 className="text-lg font-bold mb-2 flex justify-between items-center">
                     {columnKey.toUpperCase()}
