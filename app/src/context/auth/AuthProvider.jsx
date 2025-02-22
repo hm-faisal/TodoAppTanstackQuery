@@ -10,6 +10,7 @@ import {
   signOut,
 } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import axios from "axios";
 
 const AuthProvider = ({ children }) => {
   const auth = getAuth(app);
@@ -22,6 +23,10 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        const { email, displayName: name } = currentUser;
+        axios.post("/createUser", { email, name }).then((res) => {
+          console.log(res.data);
+        });
       }
       setLoading(false);
     });

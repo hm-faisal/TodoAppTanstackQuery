@@ -3,12 +3,12 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { FaRegTrashAlt } from "react-icons/fa";
 import AddModal from "./components/Modal";
 import useAuth from "./hooks/useAuth";
-import LoadingSkeleton from "./components/Loading";
+import LoadingSkeleton from "./components/Loding";
 import LoginPage from "./components/SignIn";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-const baseURL = "http://localhost:5000/task";
+const baseURL = "https://tanstack-to-do-app-server.vercel.app/task";
 
 const TodoApp = ({ email }) => {
   const { loading, user } = useAuth();

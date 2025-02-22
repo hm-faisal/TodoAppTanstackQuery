@@ -1,7 +1,8 @@
 import useAuth from "../hooks/useAuth";
+import LoginPage from "./SignIn";
 
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user, signOutUser } = useAuth();
   // insert To Do
 
   return (
@@ -15,6 +16,13 @@ const Navbar = () => {
             className="w-12 h-12 rounded-full inline-block"
           />
           <span className="font-bold text-sm">{user?.displayName}</span>
+          <button
+            type="button"
+            className="py-2 px-4 border border-gray-400 rounded bg-white"
+            onClick={() => signOutUser()}
+          >
+            logout
+          </button>
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-import LoadingSkeleton from "./components/Loading";
+import LoadingSkeleton from "./components/Loding";
 import Navbar from "./components/Navbar";
 import LoginPage from "./components/SignIn";
 import useAuth from "./hooks/useAuth";
